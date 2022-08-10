@@ -818,10 +818,8 @@
             },
             "synapseADXPoolMaxSize": {
               "type": "int"
-            },
-            "purviewAccountID": {
-              "type": "string"
             }
+            
           },
           "variables": {
             "storageEnvironmentDNS": "[environment().suffixes.storage]",
@@ -1006,9 +1004,7 @@
                 "managedResourceGroupName": "[parameters('synapseManagedRGName')]",
                 "managedVirtualNetwork": "[if(equals(parameters('networkIsolationMode'), 'vNet'), 'default', '')]",
                 "managedVirtualNetworkSettings": "[if(equals(parameters('networkIsolationMode'), 'vNet'), createObject('preventDataExfiltration', true()), null())]",
-                "purviewConfiguration": {
-                  "purviewResourceId": "[parameters('purviewAccountID')]"
-                }
+               
               }
             },
             {
@@ -1439,7 +1435,7 @@
         "[resourceId('Microsoft.Resources/deployments', 'SynapseDeploy')]"
       ]
     },
-     {
+    {
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2020-10-01",
       "name": "ServiceConnectionsDeploy",
