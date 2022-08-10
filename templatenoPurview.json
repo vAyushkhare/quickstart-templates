@@ -1003,7 +1003,7 @@
                 "sqlAdministratorLoginPassword": "[parameters('synapseSqlAdminPassword')]",
                 "managedResourceGroupName": "[parameters('synapseManagedRGName')]",
                 "managedVirtualNetwork": "[if(equals(parameters('networkIsolationMode'), 'vNet'), 'default', '')]",
-                "managedVirtualNetworkSettings": "[if(equals(parameters('networkIsolationMode'), 'vNet'), createObject('preventDataExfiltration', true()), null())]",
+                "managedVirtualNetworkSettings": "[if(equals(parameters('networkIsolationMode'), 'vNet'), createObject('preventDataExfiltration', true()), null())]"
                
               }
             },
